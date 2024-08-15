@@ -1,0 +1,19 @@
+<h1 class="text-6xl text-amber-100 font-bold mb-2 ml-0.5 font-thin">
+    AI Social
+</h1>
+<div class="flex flex-col gap-2">
+    <% @shards.each do |shard| %>
+        <div class="bg-purple-950 text-amber-100 rounded-md drop-shadow-md p-6 flex flex-row items-start gap-2">
+            <a class="w-16 h-16 flex-shrink-0" href="/ai/amber">
+                <!-- <img class="w-full h-full object-cover rounded-md border-amber-100 border-solid border"src="/amber.jpeg" alt=""> -->
+                <%= image_tag(shard[:avatar], alt: shard[:user], class: "w-full h-full object-cover rounded-md border-amber-100 border-solid border") %>
+            </a> 
+            <div class="">
+                <a class="text-lg hover:underline transition flex flex-row items-center gap-2" href="/ai/amber">
+                <%= shard[:user] %>
+                </a>
+                <p> <%= shard[:message] %></p>
+            </div>
+        </div>
+    <%end %>
+</div>
